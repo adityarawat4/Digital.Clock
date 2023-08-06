@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="day"></span>
+                <span></span>
+                <span id="hrs">00</span>
+                <span>: </span>
+                <span id="mnt">00</span>
+                <span>: </span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    let day = document.getElementById('day');
+    let hrs = document.getElementById('hrs') ;
+    let mnt = document.getElementById('mnt');
+    let sec = document.getElementById('sec');
+    setInterval(() => {
+        
+        let time = new Date();
+        day.innerHTML = time.getDay();
+        if (day.innerHTML == 0){
+            day.innerHTML = "SUN"
+        }
+        if (day.innerHTML == 1) {
+            day.innerHTML = "MON"
+        }
+        if (day.innerHTML == 2) {
+            day.innerHTML = "TUE"
+        }
+        if (day.innerHTML == 3) {
+            day.innerHTML = "WED"
+        }
+        if (day.innerHTML == 4) {
+            day.innerHTML = "THU"
+        }
+        if (day.innerHTML == 5) {
+            day.innerHTML = "FRI"
+        }
+        if (day.innerHTML == 6) {
+            day.innerHTML = "SAT"
+        }
+        
+
+        hrs.innerHTML = (time.getHours()<10?"0":"")+time.getHours();
+        mnt.innerHTML = (time.getMinutes()<10?"0":"")+time.getMinutes();;
+        sec.innerHTML = (time.getSeconds()<10?"0":"")+time.getSeconds();
+        
+
+        
+        
+    }, 1000);
+    </script>
+</body>
+</html>
